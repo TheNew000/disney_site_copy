@@ -1,6 +1,6 @@
 body{
+    background-image: url(../images/bg.jpg) no-repeat middle center;
 	background-color: #1d96d7;
-    background-image: url(../images/bg.jpg) no-repeat top center;
 }
 
 .header{
@@ -72,6 +72,7 @@ body{
         vertical-align: top;
         .top-box{
             background-color: #ebf6fc;
+            border-radius: 5px;
         }
         .tickets{
             background-color: #1994d7;

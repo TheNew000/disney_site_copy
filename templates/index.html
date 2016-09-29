@@ -1,11 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title></title>
-    <link rel="stylesheet" href="static/css/style.css">
-</head>
-<body>
-
+{% extends 'layout.html' %}
+{% block body %} 
     <div class="header">
         <ul class="menu-wrapper">
             <li>Parks & Tickets</li>
@@ -16,6 +10,7 @@
         </ul>
     </div>
     <div class="main-content">
+
         <div class="main-header">
             <h1>Disney's Animal Kingdom Theme Park</h1>
         </div>
@@ -24,61 +19,24 @@
         </div>
         <div class="left-content-bar">
             <p class="left-bar-header">
-                Encounter the magic of nature with rare creatures, authentic adventures and world-class entertainment at Disney’s Animal Kingdom park, one of the largest animal theme parks in the world. Read More
+                {{header[0][0]}}
             </p>
             <div class="left-block-items">
+                {% for row in data %}
                 <div class="left-block-item">
                     <div class="hero-image">
-                        <img src="/static/images/lion.jpg" alt="">
+                        <img src="{{row[2]}}" alt="">
                     </div>
                     <div class="hero-text-wrapper">
                         <p class="block-header">
-                            Nighttime Experiences
+                            {{row[1]}}
                         </p>
                         <p class="block-text">
-                            For the very first time, Disney’s Animal Kingdom park is alive with magic nightly with new attractions, dining and entertainment.
+                            {{row[0]}}
                         </p>
                     </div>
                 </div>
-                <div class="left-block-item">
-                    <div class="hero-image">
-                        <img src="/static/images/lion.jpg" alt="">
-                    </div>
-                    <div class="hero-text-wrapper">
-                        <p class="block-header">
-                            Attractions
-                        </p>
-                        <p class="block-text">
-                            Discover high-speed thrills, fascinating jungle trails and up-close encounters with exotic animals.
-                        </p>
-                    </div>
-                </div>
-                <div class="left-block-item">
-                    <div class="hero-image">
-                        <img src="/static/images/lion.jpg" alt="">
-                    </div>
-                    <div class="hero-text-wrapper">
-                        <p class="block-header">
-                            Entertainment
-                        </p>
-                        <p class="block-text">
-                            Delight in Broadway-style musicals, a fun-filled show with 20 species of birds, and Disney Character Meet and Greets...
-                        </p>
-                    </div>
-                </div>
-                <div class="left-block-item">
-                    <div class="hero-image">
-                        <img src="/static/images/lion.jpg" alt="">
-                    </div>
-                    <div class="hero-text-wrapper">
-                        <p class="block-header">
-                            Dining
-                        </p>
-                        <p class="block-text">
-                            Enjoy savory meals and delicious desserts inspired by American, Asian and African favorites.
-                        </p>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
         <div class="right-content-bar">
@@ -106,5 +64,4 @@
         </div>
     </div>
 
-</body>
-</html>
+{% endblock %}

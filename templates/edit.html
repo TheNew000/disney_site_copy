@@ -1,0 +1,46 @@
+{% extends 'layout.html' %}
+{% block body %} 
+    <form class="form-horizontal" method="POST" action="/edit/{{data[4]}}">
+      <div class="form-group">
+        <label for="inputEmail3" class="col-sm-2 control-label">Header Text</label>
+        <div class="col-sm-10">
+          <input type="text" name="header" class="form-control" id="inputEmail3" value="{{data[1]}}">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="inputPassword3" class="col-sm-2 control-label">Body Text</label>
+        <div class="col-sm-10">
+          <input type="text" name="body_text" class="form-control" id="inputPassword3" value="{{data[0]}}">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="inputImage" class="col-sm-2 control-label">Image</label>
+        <div class="col-sm-10">
+          <input type="text" name="image" class="form-control" id="inputImage" value="{{data[2]}}">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="inputLocation" class="col-sm-2 control-label">Location</label>
+        <div class="col-sm-10">
+          <input type="text" name="location" class="form-control" id="inputLocation" value="{{data[3]}}">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="inputStatus" class="col-sm-2 control-label">Status</label>
+        <div class="col-sm-10">
+          <input type="text" name="status" class="form-control" id="inputStatus" value="{{data[5]}}">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="inputPriority" class="col-sm-2 control-label">Priority</label>
+        <div class="col-sm-10">
+          <input type="text" name="priority" class="form-control" id="inputPriority" value="{{data[6]}}">
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <button type="submit" class="btn btn-default">Update Content</button>
+        </div>
+      </div>
+    </form>
+{% endblock %}

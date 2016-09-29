@@ -1,7 +1,7 @@
 /* line 1, ../../compass/sass/style.scss */
 body {
+  background-image: url(../images/bg.jpg) no-repeat middle center;
   background-color: #1d96d7;
-  background-image: url(../images/bg.jpg) no-repeat top center;
 }
 
 /* line 6, ../../compass/sass/style.scss */
@@ -81,32 +81,33 @@ body {
 /* line 73, ../../compass/sass/style.scss */
 .main-content .right-content-bar .top-box {
   background-color: #ebf6fc;
+  border-radius: 5px;
 }
-/* line 76, ../../compass/sass/style.scss */
+/* line 77, ../../compass/sass/style.scss */
 .main-content .right-content-bar .tickets {
   background-color: #1994d7;
   border-radius: 5px;
   text-align: center;
   padding: 20px 0px;
 }
-/* line 81, ../../compass/sass/style.scss */
+/* line 82, ../../compass/sass/style.scss */
 .main-content .right-content-bar .tickets p {
   margin: 5px 0px;
   color: #fff;
 }
-/* line 85, ../../compass/sass/style.scss */
+/* line 86, ../../compass/sass/style.scss */
 .main-content .right-content-bar .tickets .ticket-price {
   color: #fff;
   font-size: 36px;
 }
-/* line 89, ../../compass/sass/style.scss */
+/* line 90, ../../compass/sass/style.scss */
 .main-content .right-content-bar .tickets button {
   background-color: #1994d7;
   color: #fff;
   border: 1px solid #eee;
   border-radius: 5px;
 }
-/* line 96, ../../compass/sass/style.scss */
+/* line 97, ../../compass/sass/style.scss */
 .main-content .right-content-bar .map {
   text-align: center;
 }
