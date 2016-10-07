@@ -59,10 +59,12 @@ def admin_update():
     if 'username' in session:
         body = request.form['body_text']
         header = request.form['header']
-        image = request.form['image']
+        image = request.files['image']
+        image.save('static/images/' + image.filename)
+        image_path = '/static/images/' + image.filename
 
         query = "INSERT INTO page_content VALUES (DEFAULT, 'home', %s, 1, 1, 'left_bar', '', %s, %s)"
-        cursor.execute(query, (body, header, image))
+        cursor.execute(query, (body, header, image_path))
         conn.commit()
         return redirect('/admin_portal?failure=false')        
     else:
@@ -78,14 +80,24 @@ def edit(id):
     else:
         body = request.form['body_text']
         header = request.form['header']
-        image = request.form['image']
+        image = request.files['image']
+        image.save('static/images/' + image.filename)
+        image_path = '/static/images/' + image.filename
         location = request.form['location']
         status = request.form['status']
         priority = request.form['priority']
         query = "UPDATE page_content SET content = %s, status = %s, priority = %s, location = %s, header_text = %s, image_link = %s WHERE id = %s"
-        cursor.execute(query, (body, status, priority, location, header, image, id))
+        cursor.execute(query, (body, status, priority, location, header, image_path, id))
         conn.commit()
         return redirect('/admin_portal?failure=false') 
+
+
+@app.route('/delete/<id>')
+def delete(id):
+    cursor.execute("DELETE FROM page_content WHERE id = %s", (id))
+    conn.commit()
+    return redirect('/admin_portal?failure=false')
+
 
 if __name__ == '__main__':
     app.run(debug=True)
